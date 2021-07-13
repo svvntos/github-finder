@@ -15,7 +15,7 @@ searchUser.addEventListener('keyup' || 'touchend', (e) => {
             .then(data => {
                 if (data.profile.message === 'Not Found') {
                     // show alert
-                    
+
 
 
 
@@ -30,7 +30,7 @@ searchUser.addEventListener('keyup' || 'touchend', (e) => {
             })
     } else {
         //clear profile 
-
+        ui.clearProfile();
 
     }
 })
