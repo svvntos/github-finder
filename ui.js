@@ -29,8 +29,43 @@ class UI {
         </div>
         `
     }
+    //show alert message
+    showAlert(message, className) {
+        // clear remaning alerts
+        this.clearAlert();
+        // create div
+        const div = document.createElement('div');
+        // add class
+        div.className = className;
+        // Add text
+        div.appendChild(document.createTextNode(message));
+        // Get parent
+        const container = document.querySelector('.searchContainer');
+        // Get search box
+        const search = document.querySelector('.search');
+        // Insert Alert
+        container.insertBefore(div, search);
 
+        // timeout after 3 sec
 
+        setTimeout(() => {
+            this.clearAlert();
+
+        }, 2000);
+
+    }
+
+    // clear alert message
+
+    clearAlert() {
+        const currentAlert = document.querySelector('.alert');
+
+        if (currentAlert) {
+            currentAlert.remove();
+        }
+    }
+
+    //clear profile when you remove the letters
     clearProfile() {
         this.profile.innerHTML = '';
     }
