@@ -16,13 +16,10 @@ searchUser.addEventListener('keyup' || 'touchend', (e) => {
                 if (data.profile.message === 'Not Found') {
                     // show alert
                     ui.showAlert('User not found', 'alert alert-danger');
-
-
-
                 } else {
                     // show profile
                     ui.showProfile(data.profile);
-
+                    ui.showRepos(data.repos)
                 }
 
 
